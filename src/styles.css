@@ -1,13 +1,12 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
-@import "@fontsource/cormorant-garamond/500.css";
-@import "@fontsource/cormorant-garamond/600.css";
-@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "@fontsource/poppins/800.css";
+@import "@fontsource/poppins/900.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -156,14 +155,14 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Cormorant Garamond', 'Inter', serif;
-    letter-spacing: -0.01em;
-    font-weight: 600;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
   }
 }
 
