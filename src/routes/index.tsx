@@ -1,17 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Zap, Layers, ListChecks, Clock, ShieldCheck, Smartphone,
-  Check, Star, ShoppingCart, KeyRound, PlayCircle,
-  Sparkles, Users, Building2, Waves, GraduationCap, Timer, Gift,
+  Heart, Layers, ListChecks, Clock, ShieldCheck, Smartphone,
+  Check, ShoppingCart, KeyRound, PlayCircle,
+  Sparkles, Users, Church, BookOpen, GraduationCap, Timer, Gift,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { CTAButton } from "@/components/landing/CTAButton";
 import { Placeholder } from "@/components/landing/Placeholder";
 import { CHECKOUT, IMAGES } from "@/lib/landing-config";
-import bonusAquecimento from "@/assets/bonus-aquecimento.png";
-import bonusVoltaCalma from "@/assets/bonus-volta-calma.png";
-import bonusVariacoes from "@/assets/bonus-variacoes.png";
-import bonusTematicas from "@/assets/bonus-tematicas.png";
+import bonusPerguntas from "@/assets/bonus-perguntas.png";
+import bonusRoteiro from "@/assets/bonus-roteiro.png";
+import bonusCertificados from "@/assets/bonus-certificados.png";
+import bonusPlaylist from "@/assets/bonus-playlist.png";
+import bonusGratis from "@/assets/bonus-gratis.png";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -64,16 +65,16 @@ function UrgencyBar() {
 /* ---------------- NOTIFICAÇÕES COMPRA ---------------- */
 function NotificacoesCompra() {
   const compradores = [
-    { nome: "Ana", local: "São Paulo, SP", tempo: "1 minuto atrás" },
-    { nome: "Carlos", local: "Rio de Janeiro, RJ", tempo: "3 minutos atrás" },
-    { nome: "Mariana", local: "Belo Horizonte, MG", tempo: "5 minutos atrás" },
-    { nome: "João", local: "Curitiba, PR", tempo: "7 minutos atrás" },
-    { nome: "Fernanda", local: "Salvador, BA", tempo: "9 minutos atrás" },
-    { nome: "Pedro", local: "Fortaleza, CE", tempo: "12 minutos atrás" },
-    { nome: "Juliana", local: "Brasília, DF", tempo: "15 minutos atrás" },
-    { nome: "Lucas", local: "Porto Alegre, RS", tempo: "18 minutos atrás" },
-    { nome: "Camila", local: "Recife, PE", tempo: "21 minuto atrás" },
-    { nome: "Rafael", local: "Manaus, AM", tempo: "24 minutos atrás" },
+    { nome: "Pastor André", local: "São Paulo, SP", tempo: "1 minuto atrás" },
+    { nome: "Líder Mariana", local: "Rio de Janeiro, RJ", tempo: "3 minutos atrás" },
+    { nome: "Pastora Cláudia", local: "Belo Horizonte, MG", tempo: "5 minutos atrás" },
+    { nome: "Diácono João", local: "Curitiba, PR", tempo: "7 minutos atrás" },
+    { nome: "Ministra Fernanda", local: "Salvador, BA", tempo: "9 minutos atrás" },
+    { nome: "Pastor Pedro", local: "Fortaleza, CE", tempo: "12 minutos atrás" },
+    { nome: "Líder Juliana", local: "Brasília, DF", tempo: "15 minutos atrás" },
+    { nome: "Diácono Lucas", local: "Porto Alegre, RS", tempo: "18 minutos atrás" },
+    { nome: "Pastora Camila", local: "Recife, PE", tempo: "21 minutos atrás" },
+    { nome: "Líder Rafael", local: "Manaus, AM", tempo: "24 minutos atrás" },
   ];
 
   const [index, setIndex] = useState(0);
@@ -110,7 +111,7 @@ function NotificacoesCompra() {
         </div>
         <div className="min-w-0">
           <p className="text-xs font-semibold text-foreground truncate">{atual.nome} — {atual.local}</p>
-          <p className="text-[10px] text-muted-foreground">Comprou o Hidro Aula Pronta · {atual.tempo}</p>
+          <p className="text-[10px] text-muted-foreground">Comprou as 100 Dinâmicas · {atual.tempo}</p>
         </div>
       </div>
     </div>
@@ -135,17 +136,17 @@ function Hero() {
 
         <div className="animate-fade-up order-2 lg:order-1">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-xs font-semibold text-primary shadow-soft">
-            <Sparkles className="size-4" /> Material exclusivo para professores
+            <Church className="size-4" /> Material exclusivo para igrejas e líderes
           </span>
           <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground">
-            <span className="text-primary">140</span> Flashcards Visuais para <span className="text-primary">Planejamento</span> de Aulas de Hidroginástica
+            <span className="text-primary">100</span> Dinâmicas para <span className="text-primary">Encontro de Casais</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-            Mais agilidade, variedade e segurança para suas aulas sem perder horas planejando exercícios.
+            Organize um encontro inesquecível na sua igreja, sem perder semanas pesquisando ideias na internet.
           </p>
 
           <ul className="mt-6 space-y-2.5">
-            {["140 exercícios visuais organizados", "Acesso imediato e vitalício", "Funciona no celular, tablet e PC"].map((b) => (
+            {["100 dinâmicas prontas para aplicar", "Acesso imediato e vitalício", "Funciona no celular, tablet e PC"].map((b) => (
               <li key={b} className="flex items-center gap-2.5 text-foreground/90">
                 <span className="grid place-items-center size-5 rounded-full bg-accent text-accent-foreground">
                   <Check className="size-3.5" strokeWidth={3} />
@@ -161,7 +162,7 @@ function Hero() {
 
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-4 text-primary" /> Garantia de 7 dias</span>
-            <span className="flex items-center gap-1.5"><Zap className="size-4 text-primary" /> Acesso imediato</span>
+            <span className="flex items-center gap-1.5"><Heart className="size-4 text-primary" /> Acesso imediato</span>
             <span className="flex items-center gap-1.5"><Smartphone className="size-4 text-primary" /> 100% responsivo</span>
           </div>
         </div>
@@ -175,8 +176,8 @@ function VejaComoFunciona() {
   return (
     <Section id="como-funciona">
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold">Veja como funciona</h2>
-        <p className="mt-3 text-muted-foreground">Exercícios visuais prontos para consultar e aplicar nas aulas.</p>
+        <h2 className="text-3xl sm:text-4xl font-bold">Veja por dentro</h2>
+        <p className="mt-3 text-muted-foreground">Dinâmicas prontas, explicadas passo a passo, com propósito espiritual e leve.</p>
       </div>
       <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {IMAGES.flashcards.map((src, i) => (
@@ -186,7 +187,7 @@ function VejaComoFunciona() {
           >
             <div className="overflow-hidden">
               <div className="transition-transform duration-500 group-hover:scale-110">
-                <Placeholder label={`imagem_flashcards_${i + 1}`} src={src} aspect="aspect-square" />
+                <Placeholder label={`pagina_dinamica_${i + 1}`} src={src} aspect="aspect-square" />
               </div>
             </div>
           </div>
@@ -199,18 +200,18 @@ function VejaComoFunciona() {
 /* ---------------- BENEFICIOS ---------------- */
 function Beneficios() {
   const items = [
-    { icon: Timer, t: "Mais rapidez no planejamento", d: "Encontre exercícios em segundos." },
-    { icon: Layers, t: "Mais variedade nas aulas", d: "140 movimentos diferentes." },
-    { icon: ListChecks, t: "Exercícios organizados", d: "Categorizados por objetivo." },
-    { icon: Clock, t: "Menos tempo criando aulas", d: "Aulas montadas em minutos." },
-    { icon: ShieldCheck, t: "Mais segurança", d: "Execução correta dos movimentos." },
-    { icon: Smartphone, t: "Fácil de usar", d: "Material visual em qualquer dispositivo." },
+    { icon: Timer, t: "Mais rapidez na organização", d: "Pare de pesquisar dinâmicas soltas no Google." },
+    { icon: Layers, t: "Mais variedade no encontro", d: "100 dinâmicas para todos os momentos." },
+    { icon: ListChecks, t: "Tudo organizado", d: "Por tema: quebra-gelo, oração, perdão, intimidade." },
+    { icon: Clock, t: "Menos tempo planejando", d: "Encontro completo montado em poucas horas." },
+    { icon: Heart, t: "Casais transformados", d: "Dinâmicas que tocam o coração de verdade." },
+    { icon: Smartphone, t: "Fácil de usar", d: "No seu celular, tablet ou impresso." },
   ];
   return (
     <Section className="bg-muted/40">
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold">Tudo o que você ganha</h2>
-        <p className="mt-3 text-muted-foreground">Benefícios pensados para o dia a dia do professor.</p>
+        <p className="mt-3 text-muted-foreground">Pensado para líderes que querem um encontro inesquecível.</p>
       </div>
       <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {items.map(({ icon: Icon, t, d }) => (
@@ -233,11 +234,11 @@ function DorSolucao() {
     <Section>
       <div className="rounded-3xl overflow-hidden shadow-card bg-gradient-primary text-primary-foreground p-8 sm:p-14 text-center">
         <p className="text-xl sm:text-2xl font-semibold opacity-90">
-          Quantas vezes você ainda vai perder tempo procurando exercícios para repetir nas aulas?
+          Quantas noites você ainda vai passar caçando dinâmicas soltas, copiando ideias repetidas da internet?
         </p>
         <div className="my-6 h-px bg-primary-foreground/20" />
         <p className="text-2xl sm:text-3xl font-bold">
-          Com o Hidro Aula Pronta você tem exercícios organizados e prontos para aplicar.
+          Com as 100 Dinâmicas para Encontro de Casais, você tem tudo pronto para abençoar os casais da sua igreja.
         </p>
         <div className="mt-8">
           <CTAButton href="#planos" size="lg" variant="outline" className="bg-white">
@@ -252,17 +253,17 @@ function DorSolucao() {
 /* ---------------- PARA QUEM ---------------- */
 function ParaQuem() {
   const items = [
-    { icon: GraduationCap, t: "Professores de hidroginástica" },
-    { icon: Building2, t: "Academias e clubes" },
-    { icon: Users, t: "Personal aquático" },
-    { icon: Sparkles, t: "Iniciantes na área" },
-    { icon: Timer, t: "Quem quer ganhar tempo" },
+    { icon: Church, t: "Pastores e pastoras" },
+    { icon: Users, t: "Líderes de casais" },
+    { icon: GraduationCap, t: "Ministério de família" },
+    { icon: BookOpen, t: "Conselheiros cristãos" },
+    { icon: Sparkles, t: "Quem vai organizar pela 1ª vez" },
   ];
   return (
     <Section className="bg-muted/40">
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold">Para quem é</h2>
-        <p className="mt-3 text-muted-foreground">Feito para quem leva as aulas a sério.</p>
+        <p className="mt-3 text-muted-foreground">Feito para quem deseja realizar encontros que marcam vidas.</p>
       </div>
       <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {items.map(({ icon: Icon, t }) => (
@@ -279,8 +280,8 @@ function ParaQuem() {
 /* ---------------- O QUE RECEBE ---------------- */
 function OQueRecebe() {
   const itens = [
-    "140 flashcards visuais de exercícios",
-    "Organização por objetivo da aula",
+    "100 dinâmicas para encontro de casais",
+    "Organizadas por momento do retiro",
     "Material 100% digital",
     "Acesso imediato após a compra",
     "Atualizações futuras inclusas",
@@ -300,7 +301,7 @@ function OQueRecebe() {
         </div>
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold">O que você vai receber</h2>
-          <p className="mt-3 text-muted-foreground">Um kit completo para transformar suas aulas hoje mesmo.</p>
+          <p className="mt-3 text-muted-foreground">Um kit completo para você liderar um encontro inesquecível.</p>
           <ul className="mt-6 space-y-3">
             {itens.map((it) => (
               <li key={it} className="flex items-start gap-3">
@@ -324,36 +325,39 @@ function OQueRecebe() {
 function BonusExclusivos() {
   const bonus = [
     {
-      img: bonusAquecimento,
+      img: bonusPerguntas,
       tag: "Bônus #1",
-      titulo: "20 Sequências de Aquecimento",
-      desc: "Opções prontas de aquecimento com movimentos progressivos para preparar a turma antes da parte principal.",
+      titulo: "100 Perguntas Profundas para Casais",
+      desc: "Perguntas que abrem o coração e geram conversas que casais nunca tiveram antes.",
       itens: [] as string[],
     },
     {
-      img: bonusVoltaCalma,
+      img: bonusRoteiro,
       tag: "Bônus #2",
-      titulo: "20 Sequências de Volta à Calma",
-      desc: "Sugestões de encerramento com movimentos leves, respiração, mobilidade e relaxamento.",
+      titulo: "Roteiro Completo para Encontro de Casais",
+      desc: "Cronograma pronto da sexta à noite ao domingo, momento a momento — você só executa.",
       itens: [] as string[],
     },
     {
-      img: bonusVariacoes,
+      img: bonusCertificados,
       tag: "Bônus #3",
-      titulo: "50 Variações Rápidas de Exercícios",
-      desc: "Banco extra de variações para transformar qualquer exercício usando:",
-      itens: ["Direção", "Ritmo", "Braços", "Pernas", "Deslocamento", "Resistência da água", "Flutuação"],
+      titulo: "Certificados para Casais",
+      desc: "Modelos editáveis e prontos para impressão, para entregar ao final do encontro.",
+      itens: [] as string[],
     },
     {
-      img: bonusTematicas,
+      img: bonusPlaylist,
       tag: "Bônus #4",
-      titulo: "12 Aulas Temáticas Prontas",
-      desc: "Sequências completas com temas variados:",
-      itens: [
-        "Aula para idosos", "Aula funcional", "Coordenação",
-        "Resistência", "Equilíbrio", "Relaxamento",
-        "Aula intensa", "Aula com música lenta",
-      ],
+      titulo: "Playlist Romântica Cristã",
+      desc: "Seleção de músicas para criar o clima certo em cada momento do encontro:",
+      itens: ["Acolhida", "Adoração", "Intimidade", "Oração do casal", "Encerramento"],
+    },
+    {
+      img: bonusGratis,
+      tag: "Bônus #5",
+      titulo: "25 Dinâmicas Sem Precisar Comprar Nada",
+      desc: "Dinâmicas extras que funcionam só com papel, caneta e o que já existe na igreja.",
+      itens: [],
     },
   ];
 
@@ -364,7 +368,7 @@ function BonusExclusivos() {
           <Gift className="size-4" /> Bônus exclusivos do Premium
         </span>
         <h2 className="mt-4 text-3xl sm:text-4xl font-bold">
-          Leve <span className="text-accent">4 bônus</span> que valem mais que o próprio material
+          Leve <span className="text-accent">5 bônus</span> que valem mais que o próprio material
         </h2>
         <p className="mt-3 text-muted-foreground">
           Inclusos automaticamente ao escolher o Plano Premium.
@@ -411,7 +415,7 @@ function BonusExclusivos() {
       </div>
 
       <div className="mt-12 text-center">
-        <CTAButton href={CHECKOUT.premium}>Quero o Premium com os 4 bônus</CTAButton>
+        <CTAButton href={CHECKOUT.premium}>Quero o Premium com os 5 bônus</CTAButton>
         <p className="mt-3 text-xs text-muted-foreground">Acesso imediato · Garantia de 7 dias</p>
       </div>
     </Section>
@@ -430,7 +434,7 @@ function Planos() {
         <PlanoCard
           titulo="Plano Básico"
           preco="R$ 17,90"
-          beneficios={["140 flashcards visuais", "Acesso imediato", "Compatível com celular", "Garantia de 7 dias"]}
+          beneficios={["100 dinâmicas para encontro de casais", "Acesso imediato", "Compatível com celular", "Garantia de 7 dias"]}
           href={CHECKOUT.basico}
           cta="Quero o Básico"
         />
@@ -439,10 +443,11 @@ function Planos() {
           preco="R$ 27,90"
           beneficios={[
             "Tudo do plano básico",
-            "20 Sequências de Aquecimento",
-            "20 Sequências de Volta à Calma",
-            "50 Variações Rápidas de Exercícios",
-            "12 Aulas Temáticas Prontas",
+            "100 Perguntas Profundas para Casais",
+            "Roteiro Completo para Encontro de Casais",
+            "Certificados para Casais",
+            "Playlist Romântica Cristã",
+            "25 Dinâmicas sem precisar comprar nada",
             "Atualizações futuras",
             "Suporte prioritário",
           ]}
@@ -506,7 +511,7 @@ function Depoimentos() {
   return (
     <Section>
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold">Professores aprovam</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold">Líderes aprovam</h2>
         <p className="mt-3 text-muted-foreground">Veja o que estão dizendo.</p>
       </div>
       <div className="mt-8 grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
@@ -526,16 +531,12 @@ function Garantia() {
     <Section className="bg-muted/40">
       <div className="grid md:grid-cols-[auto_1fr] gap-8 items-center max-w-3xl mx-auto bg-card rounded-3xl p-8 sm:p-12 shadow-card border border-border/50">
         <div className="mx-auto md:mx-0">
-          {IMAGES.garantiaSelo ? (
-            <img src={IMAGES.garantiaSelo} alt="Garantia 7 dias" className="size-32 object-contain" loading="lazy" />
-          ) : (
-            <div className="size-32 rounded-full bg-gradient-primary text-primary-foreground grid place-items-center shadow-glow">
-              <div className="text-center">
-                <div className="text-3xl font-extrabold leading-none">7</div>
-                <div className="text-[10px] uppercase tracking-wider">dias</div>
-              </div>
+          <div className="size-32 rounded-full bg-gradient-primary text-primary-foreground grid place-items-center shadow-glow">
+            <div className="text-center">
+              <div className="text-3xl font-extrabold leading-none">7</div>
+              <div className="text-[10px] uppercase tracking-wider">dias</div>
             </div>
-          )}
+          </div>
         </div>
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold">Garantia incondicional de 7 dias</h2>
@@ -553,7 +554,7 @@ function ComoFunciona() {
   const steps = [
     { icon: ShoppingCart, t: "Compra", d: "Pagamento 100% seguro." },
     { icon: KeyRound, t: "Recebe Acesso", d: "Liberação imediata por e-mail." },
-    { icon: PlayCircle, t: "Comece a Usar", d: "Aplique nas suas aulas hoje." },
+    { icon: PlayCircle, t: "Comece a Usar", d: "Organize seu encontro hoje mesmo." },
   ];
   return (
     <Section>
@@ -584,8 +585,9 @@ function FAQ() {
     { q: "Como recebo o acesso?", a: "Logo após a confirmação do pagamento você recebe o acesso por e-mail." },
     { q: "Funciona no celular?", a: "Sim. O material é compatível com celular, tablet e computador." },
     { q: "O acesso é vitalício?", a: "Sim. Você compra uma vez e tem acesso permanente ao material." },
-    { q: "Tem atualizações?", a: "Sim. Atualizações futuras estão incluídas, sem custo adicional." },
-    { q: "Posso imprimir os flashcards?", a: "Sim. O material foi pensado para uso digital e impresso." },
+    { q: "Posso usar em mais de um encontro?", a: "Sim. Use quantas vezes quiser, em quantos encontros precisar." },
+    { q: "Serve para igrejas de qualquer denominação?", a: "Sim. O conteúdo é cristão, baseado em princípios bíblicos universais." },
+    { q: "Posso imprimir as dinâmicas?", a: "Sim. O material foi pensado para uso digital e impresso." },
     { q: "Como funciona a garantia?", a: "Você tem 7 dias para testar. Se não gostar, devolvemos 100% do valor." },
   ];
   return (
@@ -634,7 +636,7 @@ function CTAFinal() {
         <div className="absolute bottom-0 left-0 size-64 bg-white/10 blur-3xl rounded-full" />
         <div className="relative">
           <h2 className="text-3xl sm:text-5xl font-extrabold leading-tight max-w-3xl mx-auto">
-            Comece hoje a montar aulas mais rápidas, organizadas e profissionais.
+            Realize hoje o encontro de casais que vai marcar a história da sua igreja.
           </h2>
           <div className="mt-8">
             <CTAButton href={CHECKOUT.premium} size="xl" variant="outline" className="bg-white">
@@ -642,7 +644,7 @@ function CTAFinal() {
             </CTAButton>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-primary-foreground/90">
-            <span className="flex items-center gap-1.5"><Zap className="size-4" /> Acesso imediato</span>
+            <span className="flex items-center gap-1.5"><Heart className="size-4" /> Acesso imediato</span>
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-4" /> Garantia 7 dias</span>
             <span className="flex items-center gap-1.5"><ShoppingCart className="size-4" /> Pagamento seguro</span>
           </div>
@@ -656,7 +658,7 @@ function Footer() {
   return (
     <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
       <div className="mx-auto max-w-6xl px-4">
-        © {new Date().getFullYear()} Hidro Aula Pronta — Todos os direitos reservados.
+        © {new Date().getFullYear()} 100 Dinâmicas para Encontro de Casais — Todos os direitos reservados.
       </div>
     </footer>
   );
