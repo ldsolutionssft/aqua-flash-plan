@@ -1,8 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Heart, Layers, ListChecks, Clock, ShieldCheck, Smartphone,
-  Check, ShoppingCart, KeyRound, PlayCircle,
-  Sparkles, Users, Church, BookOpen, GraduationCap, Timer, Gift,
+  Heart,
+  Layers,
+  ListChecks,
+  Clock,
+  ShieldCheck,
+  Smartphone,
+  Check,
+  ShoppingCart,
+  KeyRound,
+  PlayCircle,
+  Sparkles,
+  Users,
+  Church,
+  BookOpen,
+  GraduationCap,
+  Timer,
+  Gift,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { CTAButton } from "@/components/landing/CTAButton";
@@ -18,7 +32,15 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-function Section({ id, className = "", children }: { id?: string; className?: string; children: React.ReactNode }) {
+function Section({
+  id,
+  className = "",
+  children,
+}: {
+  id?: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
     <section id={id} className={`px-4 py-16 sm:py-24 ${className}`}>
       <div className="mx-auto max-w-6xl">{children}</div>
@@ -104,14 +126,19 @@ function NotificacoesCompra() {
 
   return (
     <div
-      className={`fixed top-12 right-3 z-[60] transition-all duration-500 ${visible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}>
+      className={`fixed top-12 right-3 z-[60] transition-all duration-500 ${visible ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+    >
       <div className="flex items-center gap-3 rounded-xl bg-white/95 backdrop-blur-sm shadow-lg border border-border/60 px-4 py-3 max-w-[280px]">
         <div className="shrink-0 grid place-items-center size-9 rounded-full bg-green-100 text-green-600">
           <ShoppingCart className="size-4" />
         </div>
         <div className="min-w-0">
-          <p className="text-xs font-semibold text-foreground truncate">{atual.nome} — {atual.local}</p>
-          <p className="text-[10px] text-muted-foreground">Comprou as 100 Dinâmicas · {atual.tempo}</p>
+          <p className="text-xs font-semibold text-foreground truncate">
+            {atual.nome} — {atual.local}
+          </p>
+          <p className="text-[10px] text-muted-foreground">
+            Comprou as 100 Dinâmicas · {atual.tempo}
+          </p>
         </div>
       </div>
     </div>
@@ -128,9 +155,17 @@ function Hero() {
       </div>
       <div className="mx-auto max-w-6xl px-4 py-12 sm:py-20 grid lg:grid-cols-2 gap-10 items-center">
         <div className="relative order-1 lg:order-2">
-          <div className="absolute -inset-4 bg-gradient-primary opacity-20 blur-2xl rounded-3xl" />
+          <div className="absolute -inset-4  opacity-20 blur-2xl rounded-3xl" />
           <div className="relative">
-            <Placeholder label="mockup_principal" src={IMAGES.heroMockup} srcMobile={IMAGES.heroMockupMobile} aspect="aspect-[4/5]" priority width={1024} height={1280} />
+            <Placeholder
+              label="mockup_principal"
+              src={IMAGES.heroMockup}
+              srcMobile={IMAGES.heroMockupMobile}
+              aspect="aspect-[4/5]"
+              priority
+              width={1024}
+              height={1280}
+            />
           </div>
         </div>
 
@@ -139,14 +174,20 @@ function Hero() {
             <Church className="size-4" /> Material exclusivo para igrejas e líderes
           </span>
           <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] text-foreground">
-            <span className="text-primary">100</span> Dinâmicas para <span className="text-primary">Encontro de Casais</span>
+            <span className="text-primary">100</span> Dinâmicas para{" "}
+            <span className="text-primary">Encontro de Casais</span>
           </h1>
           <p className="mt-5 text-lg text-muted-foreground max-w-xl">
-            Organize um encontro inesquecível na sua igreja, sem perder semanas pesquisando ideias na internet.
+            Organize um encontro inesquecível na sua igreja, sem perder semanas pesquisando ideias
+            na internet.
           </p>
 
           <ul className="mt-6 space-y-2.5">
-            {["100 dinâmicas prontas para aplicar", "Acesso imediato e vitalício", "Funciona no celular, tablet e PC"].map((b) => (
+            {[
+              "100 dinâmicas prontas para aplicar",
+              "Acesso imediato e vitalício",
+              "Funciona no celular, tablet e PC",
+            ].map((b) => (
               <li key={b} className="flex items-center gap-2.5 text-foreground/90">
                 <span className="grid place-items-center size-5 rounded-full bg-accent text-accent-foreground">
                   <Check className="size-3.5" strokeWidth={3} />
@@ -157,13 +198,21 @@ function Hero() {
           </ul>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-            <CTAButton href="#planos" size="xl">Quero Acesso Imediato</CTAButton>
+            <CTAButton href="#planos" size="xl">
+              Quero Acesso Imediato
+            </CTAButton>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5"><ShieldCheck className="size-4 text-primary" /> Garantia de 7 dias</span>
-            <span className="flex items-center gap-1.5"><Heart className="size-4 text-primary" /> Acesso imediato</span>
-            <span className="flex items-center gap-1.5"><Smartphone className="size-4 text-primary" /> 100% responsivo</span>
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="size-4 text-primary" /> Garantia de 7 dias
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Heart className="size-4 text-primary" /> Acesso imediato
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Smartphone className="size-4 text-primary" /> 100% responsivo
+            </span>
           </div>
         </div>
       </div>
@@ -177,7 +226,9 @@ function VejaComoFunciona() {
     <Section id="como-funciona">
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold">Veja por dentro</h2>
-        <p className="mt-3 text-muted-foreground">Dinâmicas prontas, explicadas passo a passo, com propósito espiritual e leve.</p>
+        <p className="mt-3 text-muted-foreground">
+          Dinâmicas prontas, explicadas passo a passo, com propósito espiritual e leve.
+        </p>
       </div>
       <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
         {IMAGES.flashcards.map((src, i) => (
@@ -200,9 +251,17 @@ function VejaComoFunciona() {
 /* ---------------- BENEFICIOS ---------------- */
 function Beneficios() {
   const items = [
-    { icon: Timer, t: "Mais rapidez na organização", d: "Pare de pesquisar dinâmicas soltas no Google." },
+    {
+      icon: Timer,
+      t: "Mais rapidez na organização",
+      d: "Pare de pesquisar dinâmicas soltas no Google.",
+    },
     { icon: Layers, t: "Mais variedade no encontro", d: "100 dinâmicas para todos os momentos." },
-    { icon: ListChecks, t: "Tudo organizado", d: "Por tema: quebra-gelo, oração, perdão, intimidade." },
+    {
+      icon: ListChecks,
+      t: "Tudo organizado",
+      d: "Por tema: quebra-gelo, oração, perdão, intimidade.",
+    },
     { icon: Clock, t: "Menos tempo planejando", d: "Encontro completo montado em poucas horas." },
     { icon: Heart, t: "Casais transformados", d: "Dinâmicas que tocam o coração de verdade." },
     { icon: Smartphone, t: "Fácil de usar", d: "No seu celular, tablet ou impresso." },
@@ -211,11 +270,16 @@ function Beneficios() {
     <Section className="bg-muted/40">
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold">Tudo o que você ganha</h2>
-        <p className="mt-3 text-muted-foreground">Pensado para líderes que querem um encontro inesquecível.</p>
+        <p className="mt-3 text-muted-foreground">
+          Pensado para líderes que querem um encontro inesquecível.
+        </p>
       </div>
       <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {items.map(({ icon: Icon, t, d }) => (
-          <div key={t} className="group rounded-2xl bg-card p-6 shadow-soft transition-all duration-300 hover:shadow-card hover:-translate-y-1 border border-border/50">
+          <div
+            key={t}
+            className="group rounded-2xl bg-card p-6 shadow-soft transition-all duration-300 hover:shadow-card hover:-translate-y-1 border border-border/50"
+          >
             <div className="size-12 rounded-xl bg-gradient-accent grid place-items-center text-accent-foreground transition-transform group-hover:scale-110">
               <Icon className="size-6" />
             </div>
@@ -234,11 +298,13 @@ function DorSolucao() {
     <Section>
       <div className="rounded-3xl overflow-hidden shadow-card bg-gradient-primary text-primary-foreground p-8 sm:p-14 text-center">
         <p className="text-xl sm:text-2xl font-semibold opacity-90">
-          Quantas noites você ainda vai passar caçando dinâmicas soltas, copiando ideias repetidas da internet?
+          Quantas noites você ainda vai passar caçando dinâmicas soltas, copiando ideias repetidas
+          da internet?
         </p>
         <div className="my-6 h-px bg-primary-foreground/20" />
         <p className="text-2xl sm:text-3xl font-bold">
-          Com as 100 Dinâmicas para Encontro de Casais, você tem tudo pronto para abençoar os casais da sua igreja.
+          Com as 100 Dinâmicas para Encontro de Casais, você tem tudo pronto para abençoar os casais
+          da sua igreja.
         </p>
         <div className="mt-8">
           <CTAButton href="#planos" size="lg" variant="outline" className="bg-white">
@@ -263,11 +329,16 @@ function ParaQuem() {
     <Section className="bg-muted/40">
       <div className="text-center max-w-2xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold">Para quem é</h2>
-        <p className="mt-3 text-muted-foreground">Feito para quem deseja realizar encontros que marcam vidas.</p>
+        <p className="mt-3 text-muted-foreground">
+          Feito para quem deseja realizar encontros que marcam vidas.
+        </p>
       </div>
       <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
         {items.map(({ icon: Icon, t }) => (
-          <div key={t} className="rounded-2xl bg-card p-5 text-center shadow-soft border border-border/50 hover:shadow-card transition-all">
+          <div
+            key={t}
+            className="rounded-2xl bg-card p-5 text-center shadow-soft border border-border/50 hover:shadow-card transition-all"
+          >
             <Icon className="size-8 text-primary mx-auto" />
             <p className="mt-3 font-semibold text-sm">{t}</p>
           </div>
@@ -290,18 +361,11 @@ function OQueRecebe() {
   return (
     <Section>
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        <div className="relative">
-          <div className="absolute -inset-4 bg-gradient-accent opacity-30 blur-2xl rounded-3xl" />
-          <div className="relative rounded-3xl overflow-hidden shadow-card">
-            <Placeholder label="mockup_grande_produto" src={IMAGES.bigMockup} aspect="aspect-[4/3]" />
-          </div>
-          <span className="absolute -top-3 -right-3 bg-gradient-primary text-primary-foreground text-xs font-bold px-4 py-2 rounded-full shadow-glow">
-            BÔNUS INCLUSO
-          </span>
-        </div>
         <div>
           <h2 className="text-3xl sm:text-4xl font-bold">O que você vai receber</h2>
-          <p className="mt-3 text-muted-foreground">Um kit completo para você liderar um encontro inesquecível.</p>
+          <p className="mt-3 text-muted-foreground">
+            Um kit completo para você liderar um encontro inesquecível.
+          </p>
           <ul className="mt-6 space-y-3">
             {itens.map((it) => (
               <li key={it} className="flex items-start gap-3">
@@ -344,13 +408,6 @@ function BonusExclusivos() {
       titulo: "Certificados para Casais",
       desc: "Modelos editáveis e prontos para impressão, para entregar ao final do encontro.",
       itens: [] as string[],
-    },
-    {
-      img: bonusPlaylist,
-      tag: "Bônus #4",
-      titulo: "Playlist Romântica Cristã",
-      desc: "Seleção de músicas para criar o clima certo em cada momento do encontro:",
-      itens: ["Acolhida", "Adoração", "Intimidade", "Oração do casal", "Encerramento"],
     },
     {
       img: bonusGratis,
@@ -434,7 +491,12 @@ function Planos() {
         <PlanoCard
           titulo="Plano Básico"
           preco="R$ 17,90"
-          beneficios={["100 dinâmicas para encontro de casais", "Acesso imediato", "Compatível com celular", "Garantia de 7 dias"]}
+          beneficios={[
+            "100 dinâmicas para encontro de casais",
+            "Acesso imediato",
+            "Compatível com celular",
+            "Garantia de 7 dias",
+          ]}
           href={CHECKOUT.basico}
           cta="Quero o Básico"
         />
@@ -446,7 +508,6 @@ function Planos() {
             "100 Perguntas Profundas para Casais",
             "Roteiro Completo para Encontro de Casais",
             "Certificados para Casais",
-            "Playlist Romântica Cristã",
             "25 Dinâmicas sem precisar comprar nada",
             "Atualizações futuras",
             "Suporte prioritário",
@@ -461,8 +522,20 @@ function Planos() {
 }
 
 function PlanoCard({
-  titulo, preco, beneficios, href, cta, destaque,
-}: { titulo: string; preco: string; beneficios: string[]; href: string; cta: string; destaque?: boolean }) {
+  titulo,
+  preco,
+  beneficios,
+  href,
+  cta,
+  destaque,
+}: {
+  titulo: string;
+  preco: string;
+  beneficios: string[];
+  href: string;
+  cta: string;
+  destaque?: boolean;
+}) {
   return (
     <div
       className={`relative rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 ${
@@ -479,12 +552,17 @@ function PlanoCard({
       <h3 className="text-xl font-bold">{titulo}</h3>
       <div className="mt-4 flex items-baseline gap-2">
         <span className="text-5xl font-extrabold">{preco}</span>
-        <span className={destaque ? "text-primary-foreground/70" : "text-muted-foreground"}>à vista</span>
+        <span className={destaque ? "text-primary-foreground/70" : "text-muted-foreground"}>
+          à vista
+        </span>
       </div>
       <ul className="mt-6 space-y-2.5">
         {beneficios.map((b) => (
           <li key={b} className="flex items-start gap-2.5">
-            <Check className={`size-5 mt-0.5 shrink-0 ${destaque ? "text-accent" : "text-primary"}`} strokeWidth={3} />
+            <Check
+              className={`size-5 mt-0.5 shrink-0 ${destaque ? "text-accent" : "text-primary"}`}
+              strokeWidth={3}
+            />
             <span className="text-sm font-medium">{b}</span>
           </li>
         ))}
@@ -541,7 +619,8 @@ function Garantia() {
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold">Garantia incondicional de 7 dias</h2>
           <p className="mt-3 text-muted-foreground">
-            Se em até 7 dias você não estiver satisfeito, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia. O risco é todo nosso.
+            Se em até 7 dias você não estiver satisfeito, devolvemos 100% do seu investimento. Sem
+            perguntas, sem burocracia. O risco é todo nosso.
           </p>
         </div>
       </div>
@@ -582,13 +661,34 @@ function ComoFunciona() {
 /* ---------------- FAQ ---------------- */
 function FAQ() {
   const itens = [
-    { q: "Como recebo o acesso?", a: "Logo após a confirmação do pagamento você recebe o acesso por e-mail." },
-    { q: "Funciona no celular?", a: "Sim. O material é compatível com celular, tablet e computador." },
-    { q: "O acesso é vitalício?", a: "Sim. Você compra uma vez e tem acesso permanente ao material." },
-    { q: "Posso usar em mais de um encontro?", a: "Sim. Use quantas vezes quiser, em quantos encontros precisar." },
-    { q: "Serve para igrejas de qualquer denominação?", a: "Sim. O conteúdo é cristão, baseado em princípios bíblicos universais." },
-    { q: "Posso imprimir as dinâmicas?", a: "Sim. O material foi pensado para uso digital e impresso." },
-    { q: "Como funciona a garantia?", a: "Você tem 7 dias para testar. Se não gostar, devolvemos 100% do valor." },
+    {
+      q: "Como recebo o acesso?",
+      a: "Logo após a confirmação do pagamento você recebe o acesso por e-mail.",
+    },
+    {
+      q: "Funciona no celular?",
+      a: "Sim. O material é compatível com celular, tablet e computador.",
+    },
+    {
+      q: "O acesso é vitalício?",
+      a: "Sim. Você compra uma vez e tem acesso permanente ao material.",
+    },
+    {
+      q: "Posso usar em mais de um encontro?",
+      a: "Sim. Use quantas vezes quiser, em quantos encontros precisar.",
+    },
+    {
+      q: "Serve para igrejas de qualquer denominação?",
+      a: "Sim. O conteúdo é cristão, baseado em princípios bíblicos universais.",
+    },
+    {
+      q: "Posso imprimir as dinâmicas?",
+      a: "Sim. O material foi pensado para uso digital e impresso.",
+    },
+    {
+      q: "Como funciona a garantia?",
+      a: "Você tem 7 dias para testar. Se não gostar, devolvemos 100% do valor.",
+    },
   ];
   return (
     <Section className="bg-muted/40">
@@ -596,7 +696,9 @@ function FAQ() {
         <h2 className="text-3xl sm:text-4xl font-bold">Perguntas frequentes</h2>
       </div>
       <div className="mt-10 max-w-3xl mx-auto space-y-3">
-        {itens.map((item, i) => <FAQItem key={i} {...item} />)}
+        {itens.map((item, i) => (
+          <FAQItem key={i} {...item} />
+        ))}
       </div>
     </Section>
   );
@@ -611,7 +713,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         className="w-full flex items-center justify-between gap-4 text-left p-5 font-semibold hover:bg-muted/30 transition-colors"
       >
         <span>{q}</span>
-        <span className={`shrink-0 size-7 rounded-full bg-primary text-primary-foreground grid place-items-center transition-transform ${open ? "rotate-45" : ""}`}>
+        <span
+          className={`shrink-0 size-7 rounded-full bg-primary text-primary-foreground grid place-items-center transition-transform ${open ? "rotate-45" : ""}`}
+        >
           +
         </span>
       </button>
@@ -644,9 +748,15 @@ function CTAFinal() {
             </CTAButton>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-primary-foreground/90">
-            <span className="flex items-center gap-1.5"><Heart className="size-4" /> Acesso imediato</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck className="size-4" /> Garantia 7 dias</span>
-            <span className="flex items-center gap-1.5"><ShoppingCart className="size-4" /> Pagamento seguro</span>
+            <span className="flex items-center gap-1.5">
+              <Heart className="size-4" /> Acesso imediato
+            </span>
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="size-4" /> Garantia 7 dias
+            </span>
+            <span className="flex items-center gap-1.5">
+              <ShoppingCart className="size-4" /> Pagamento seguro
+            </span>
           </div>
         </div>
       </div>
@@ -658,7 +768,8 @@ function Footer() {
   return (
     <footer className="border-t border-border py-8 text-center text-xs text-muted-foreground">
       <div className="mx-auto max-w-6xl px-4">
-        © {new Date().getFullYear()} 100 Dinâmicas para Encontro de Casais — Todos os direitos reservados.
+        © {new Date().getFullYear()} 100 Dinâmicas para Encontro de Casais — Todos os direitos
+        reservados.
       </div>
     </footer>
   );
